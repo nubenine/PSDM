@@ -91,7 +91,7 @@ void main(){
 
   void Function() prueba = () {
     print("Prueba");
-  }
+  };
 
   prueba();
 
