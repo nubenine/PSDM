@@ -12,10 +12,60 @@ void menu(){
   print("-0: Saír: rematar o programa");
 }
 
+({String titulo, String artista, String album, String genero, int year, int duracion})crearCancion(String titulo, String artista, String album, String genero, int year, int duracion){
+  var cancionEj = (
+		titulo: "",
+    artista: "",
+    album: "",
+    genero: "",
+    year: null,
+    duracion: null
+  );
+}
+
+void cargarDatosExemplo(){
+	
+
+}
+
+
 void main(List<String> args) {
-  int opcion;
+  int? opcion;
   do {
     menu();
-    opcion = int.parse(stdin.readLineSync()!);
+    String resposta = stdin.readLineSync() ?? '';
+    opcion = int.tryParse(resposta.trim());
+    switch (opcion){
+      case 1:
+					
+
+      	break;
+      case 2:
+
+
+      	break;
+      case 3:
+
+
+      	break;
+      case 4:
+
+
+      	break;
+			case 5:
+
+
+      	break;
+      case 6:
+
+
+      	break;
+			case null:
+      	print("Introduce una opcion");
+        break;
+      case >6 || <0:
+      	print("Introduce una opcion valida");
+        break;
+    }
   } while (opcion != 0);
 }
