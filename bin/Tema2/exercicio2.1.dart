@@ -34,6 +34,11 @@ void main(List<String> args) {
   do {
     menu();
     String resposta = stdin.readLineSync() ?? '';
+    do {
+			print("Error, introduce una cadena.");
+      menu();
+      resposta = stdin.readLineSync() ?? '';
+    } while (resposta is! int);
     opcion = int.tryParse(resposta.trim());
     switch (opcion){
       case 1:
