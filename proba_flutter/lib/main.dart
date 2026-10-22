@@ -11,7 +11,10 @@ class MiAplicacion extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return const Placeholder();
+    return MaterialApp(
+      title: "Sus Didi",
+      
+    );
   }
   
 }
