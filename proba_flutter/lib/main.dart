@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 
-
-void main(){
-
+void main(List<String> args) {
+  runApp(Nigga());
 }
 
-class MiAplicacion extends StatelessWidget{
-  const MiAplicacion({super.key});
+
+class Nigga extends StatelessWidget {
+  const Nigga({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      title: "Sus Didi",
-      
+    return const MaterialApp(
+      home: PantallaPrincipal(), title: "Titulo App",
     );
   }
-  
+}
+
+
+class PantallaPrincipal extends StatelessWidget {
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Sic Seben barra")),
+      body: Text("Nigga!")
+    );
+  }
 }
