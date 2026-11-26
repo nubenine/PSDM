@@ -10,7 +10,10 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: OMeuTexto("Texto", corFondo: Colors.amber,)
+      debugShowCheckedModeBanner: false,//quita lo de debug
+      // home: OMeuTexto("Texto", corFondo: Colors.amber,), 
+      home: WidgetPrincipal(),
+
     );
   }
 }
@@ -46,7 +49,7 @@ class OMeuTexto extends StatelessWidget {
     return Scaffold( body: Column(
       children: [
         SizedBox(height: 40.0),
-        Text(this.texto!)
+        Text(texto!)
       ],
     )
         
@@ -59,14 +62,72 @@ class Outro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( body: Column(
-      children: [
-        SizedBox(height: 40.0),
-        Text("sicseben")
-        AMinaImaxeLocal()
-      ],
+    return Scaffold( body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(height: 200.0, color: Colors.red,),
+          Container(height: 200.0, color: Colors.amber,),
+          Container(height: 200.0, color: Colors.red,),
+        ],
+      )
     )
-        
-      );
+
+    );
+  }
+}
+
+class WidgetPrincipal extends StatelessWidget {
+  const WidgetPrincipal({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var alumnos = ["NiggaOne", "NiggaTwo", "NiggaThree", "NiggaFour"];
+    return Scaffold(
+      body: ListView.separated(
+        separatorBuilder: (contexto, indice) => Divider(),
+        itemCount: alumnos.length,
+        itemBuilder: (contexto, indice){
+        return ListTile(
+          trailing: Icon(Icons.chevron_right),
+          title: Text(alumnos[indice]),
+        );
+      }),
+    );
+  }
+}
+
+class Lista extends StatelessWidget {
+  const Lista({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:
+        ListView(
+          children: [
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Sicseben"),
+              subtitle: Text("sic sebe"),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("Sicseben"),
+              subtitle: Text("sic sebe"),
+            ),
+            ListTile(
+              leading: Icon(Icons.gamepad_sharp),
+              title: Text("Sicseben"),
+              subtitle: Text("sic sebe"),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Sicseben"),
+              subtitle: Text("sic sebe"),
+              trailing: Icon(Icons.chevron_right),
+            )
+          ],
+        )
+    );
   }
 }
